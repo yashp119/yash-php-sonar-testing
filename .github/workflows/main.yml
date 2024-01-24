@@ -20,7 +20,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
- 
+          SONAR_SCANNER_OPTS: -Dsonar.analysis.mode=preview
+
       - name: Upload SonarQube Report
         uses: actions/upload-artifact@v2
         with:
