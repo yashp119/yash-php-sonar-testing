@@ -1,9 +1,10 @@
 name: Build, SonarQube Scan, and Email
+
 on:
   push:
     branches:
       - master
- 
+
 jobs:
   build:
     name: Build
@@ -25,7 +26,7 @@ jobs:
         with:
           name: sonarqube-report
           path: .scannerwork/report-task.txt
- 
+
   email:
     name: Send SonarQube Report via Email
     runs-on: ubuntu-latest
