@@ -75,7 +75,8 @@ jobs:
           from: ${{ secrets.EMAIL_FROM }}
           attachments: sonarqube-issues.json
           content_type: application/json
-main:
+
+  main:
     name: Create PR Release to Main
     runs-on: ubuntu-latest
     needs: [email]
