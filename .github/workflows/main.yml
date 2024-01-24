@@ -43,22 +43,8 @@ jobs:
       - name: Fetch SonarQube Issues
         run: |
           curl -u "${{ secrets.SONAR_TOKEN }}:" \
-            "${{ secrets.SONAR_HOST_URL }}/api/issues/search?componentKeys=${{ github.repository }}&resolved=false" \
+            "${{ secrets.SONAR_HOST_URL }}/api/issues/search?componentKeys=new-repo-php-testing&resolved=false" \
             -o sonarqube-issues.json
-
-          if [ "$(jq '.errors' sonarqube-issues.json)" != "null" ]; then
-            echo "Error in SonarQube API response:"
-            cat sonarqube-issues.json
-            exit 1
-          fi
-
-      - name: Debug SonarQube JSON
-        run: cat sonarqube-issues.json
-
-      - name: Process SonarQube Issues
-        run: |
-          ISSUES_KEY=$(grep -oP '"component":"\K[^"]+' sonarqube-issues.json | awk 'NR==1{print $1; exit}')
-          echo "SonarQube Issues Key: $ISSUES_KEY"
 
       - name: Send SonarQube Report via Email
         uses: dawidd6/action-send-mail@v2
