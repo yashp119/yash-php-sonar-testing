@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Welcome to Dummy</title>
-  <meta name="description" content="Dummy is a toolkit for rapid prototyping and QA.">
+  <meta name="description" content="Dummy is a toolknit for rapid prototyping and QA.">
   <meta name="author" content="David Kerns">
 
   <!-- Dummy Demo CSS -->
