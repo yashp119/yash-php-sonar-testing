@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - prod
 
 jobs:
   build:
@@ -27,10 +30,23 @@ jobs:
           name: sonarqube-report
           path: .scannerwork/report-task.txt
 
-  email:
-    name: Send SonarQube Report via Email
+  generate_pr:
+    name: Generate PR
     runs-on: ubuntu-latest
     needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate PR
+        run: |
+          # Add your PR generation steps here
+          echo "Generating PR..."
+
+  email:
+    name: Send Email
+    runs-on: ubuntu-latest
+    needs: [build, generate_pr]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
