@@ -13,7 +13,7 @@
 
   <!-- For Syntax Highlighting. -->
   <link href="demo_files/sh/shCore.css" rel="stylesheet" type="text/css" />
-  <link href="demo_files/sh/shThemeMidnight.css" rel="stylesheet" type="text/css" />
+  <link href="demo_files/sh/shThemeMidnight.css" rel="stylehsheet" type="text/css" />
 
 </head>
 
