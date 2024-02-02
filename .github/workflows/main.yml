@@ -57,5 +57,5 @@ jobs:
           body: Sonar-report
           to: ${{ secrets.EMAIL_TO_1 }}, ${{ secrets.EMAIL_TO_2 }}
           from: ${{ secrets.EMAIL_FROM }}
-          attachments: SonarQube-Report.json
+          attachments: sonarqube-issues.json
           content_type: application/json
